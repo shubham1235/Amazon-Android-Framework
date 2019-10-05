@@ -23,7 +23,7 @@ public class AppiumServer {
 	 * background.
 	 * 
 	 * @throws Exception
-	 * 
+	 *
 	 */
 	public void startAppiumServer() throws Exception {
 		RuntimeExec appiumObj = new RuntimeExec();
@@ -40,6 +40,8 @@ public class AppiumServer {
 						+ Helper.getProjectProperties("appiumPortNumber") + " --no-reset --command-timeout "
 						+ Helper.getProjectProperties("command-timeout"));
 	}
+	
+	
 
 	/**
 	 * This class contain two method
