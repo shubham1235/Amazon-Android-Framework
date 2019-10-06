@@ -8,15 +8,6 @@ import java.io.InputStreamReader;
 import org.appium.android.Commons.Helper;
 
 public class AppiumServer {
-
-	// FOR SERVER TESTING 
-	public static void main(String args[]) throws Exception {
-
-		System.out.println(System.getProperty("user.home"));
-		AppiumServer appiumServer = new AppiumServer();
-		appiumServer.startAppiumServer();
-	}
-
 	/**
 	 * This method invoke Appium server methods and all command parameter get from
 	 * Application.properties file. StopAppium method stop appium server if run in
@@ -40,8 +31,6 @@ public class AppiumServer {
 						+ Helper.getProjectProperties("appiumPortNumber") + " --no-reset --command-timeout "
 						+ Helper.getProjectProperties("command-timeout"));
 	}
-	
-	
 
 	/**
 	 * This class contain two method
@@ -131,7 +120,7 @@ public class AppiumServer {
 		 * profile runtime Environment for Execution like Linux or windows.
 		 *
 		 * 
-		 * @param command 
+		 * @param command
 		 */
 		public void stopAppium(String command) {
 			Runtime rt = Runtime.getRuntime();
