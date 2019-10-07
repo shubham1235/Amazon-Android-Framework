@@ -58,4 +58,23 @@ public class BaseUtil {
 		}
 		return null;
 	}
+	
+	
+	public boolean verifyTextIsVisible(WebElement element , String text)
+	{
+		WaitForElement(element);
+		return element.getText().toString().trim().equals(text.toString().trim());
+	}
+	
+	
+	public boolean verifyTextIsVisible(String text) {
+		try {
+			WebElement element = androidDriver.findElementByAndroidUIAutomator("new UiSelector().textContains(\"" + text.toString().trim() + "\").instance(0)");
+			WaitForElement(element);
+			return element.isDisplayed();
+		} catch (Exception e) { // use specific exception like no such element
+			return false;
+		}
+
+	}
 }
