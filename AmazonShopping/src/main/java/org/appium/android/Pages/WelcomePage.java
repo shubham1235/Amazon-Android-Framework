@@ -12,36 +12,26 @@ public class WelcomePage extends BaseUtil {
 		PageFactory.initElements(androidDriver, this);
 	}
 	
-	@FindBy(id="")
-	public WebElement welcomeLable;
-	
-	
-	@FindBy(id="")
-	public WebElement LoginRadioButton;
-	
-	
-	@FindBy(id="")
+	@FindBy(id="login_accordion_header")
+	public WebElement loginRadioButton;
+		
+	@FindBy(id="ap_email_login")
 	public WebElement userNameTextBox;
-	
-	
-	@FindBy(id="")
+		
+	@FindBy(xpath="//android.view.View[contains(@resource-id,'outer-accordion-signin-signup-page')]//*[@text='Continue']")
 	public WebElement continueButton;
 	
+	@FindBy(xpath="//android.view.View[contains(@resource-id,'auth-error-message-box')]/android.view.View/android.view.View[1]")
+	public WebElement wrongUserFisrtErrorMsg;
 	
-
-	@FindBy(id="")
-	public WebElement wrongUserNameErrorMsg;
+	@FindBy(xpath="//android.view.View[contains(@resource-id,'auth-error-message-box')]/android.view.View/android.view.View[2]")
+	public WebElement wrongUserSecondErrorMsg;
 	
+	@FindBy(id="auth-password-container")
+	public WebElement loginPasswordTextBox;
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@FindBy(id="signInSubmit")
+	public WebElement loginButton;
 	
 	
 	
