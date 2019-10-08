@@ -16,7 +16,7 @@ public class DriverGenerator {
 	
 	/**
 	 * Get AndroidDriver
-	 * @return
+	 * @return AndroidDriver
 	 * @throws Exception 
 	 */
 	public static AndroidDriver<MobileElement> getAppiumDriver() throws Exception {	
