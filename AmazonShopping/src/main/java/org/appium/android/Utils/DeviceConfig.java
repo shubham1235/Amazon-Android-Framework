@@ -5,6 +5,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.remote.MobileCapabilityType;
 
+/**
+ * set device Capabilities
+ * all capability get from  ApplicationConfig.properties file
+ * @author shubhamverma
+ */
 public class DeviceConfig {
 	static DesiredCapabilities capabilities = new DesiredCapabilities();
 	static DesiredCapabilities getDeviceCapability() throws Exception {
