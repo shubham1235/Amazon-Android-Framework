@@ -117,4 +117,6 @@ public class SignInPage extends BaseUtil {
 	//	System.out.println(welcomeLable.getText());
 		return verifyTextIsVisible(welcomeLable,"Welcome");
 	}
+	
+	
 }
