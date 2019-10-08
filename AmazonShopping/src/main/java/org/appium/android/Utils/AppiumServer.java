@@ -116,11 +116,11 @@ public class AppiumServer {
 		}
 
 		/**
-		 * This Method use for Start Appium Server here we use Runtime class which is
-		 * profile runtime Environment for Execution like Linux or windows.
+		 * This Method use for Start Appium
+		 * Auto Deduct environment
 		 *
 		 * 
-		 * @param command
+		 * @param command "Linux Or windows Command"
 		 */
 		public void stopAppium(String command) {
 			Runtime rt = Runtime.getRuntime();
