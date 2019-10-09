@@ -21,6 +21,8 @@ public class DeviceConfig {
 		capabilities.setCapability("automationName", Helper.getProjectProperties("AUTOMATION_NAME"));
 		capabilities.setCapability("newCommandTimeout", Helper.getProjectProperties("NEWCOMMANDTIMEOUT"));
 		capabilities.setCapability("appActivity", Helper.getProjectProperties("APPACTIVITY"));
+	//	capabilities.setCapability("autoWebview", true);
+		
 		//capabilities.setCapability(MobileCapabilityType.CLEAR_SYSTEM_FILES, true);
 		return capabilities;
 
