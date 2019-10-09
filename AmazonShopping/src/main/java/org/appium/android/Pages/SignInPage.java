@@ -4,8 +4,6 @@ import org.appium.android.Utils.BaseUtil;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.testng.annotations.Test;
 
 public class SignInPage extends BaseUtil {
 
