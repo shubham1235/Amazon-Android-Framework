@@ -48,10 +48,16 @@ public class BaseUtil {
 	 * @param element Android , Web , IOS Elements
 	 * @param text element acceptable text
 	 */
-	public void enterText(WebElement element, String text) {
-		WaitForElement(element);
-		element.clear();
-		element.sendKeys(text.trim());
+	public boolean enterText(WebElement element, String text) {
+		try {
+			WaitForElement(element);
+			element.clear();
+			element.sendKeys(text.trim());
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+		
 	}
 
 	/**
@@ -158,7 +164,7 @@ public class BaseUtil {
 					"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""
 							+ text + "\").instance(0))");
 			return clickOnElement(scrolledToElement);
-		} catch (NoSuchElementException | InterruptedException e) {
+		} catch (Exception e) {
 
 			return false;
 		}
@@ -223,7 +229,6 @@ public class BaseUtil {
 						+ resourceId + "\").instance(0))");
 		return scrolledToElement;
 	}
-
 	/**
 	 * scroll by pointer 
 	 * @param ScrollPintervalue pinter value should be 0.001 to 0.1 for any size of device
@@ -235,10 +240,14 @@ public class BaseUtil {
 		int endy = (int) (size.height * ScrollPintervalue); // changed from0.005 to 0.1 
 		TouchAction action = new TouchAction(androidDriver);
 
-		action.press(new PointOption<>().point(startx, starty)).waitAction()
-				.moveTo(new PointOption<>().point(startx, endy)).release().perform();
+		
+		action.press(new PointOption<>().point(startx, starty)).waitAction().moveTo(new PointOption<>().point(startx, endy)).release().perform();
 
 	}
+	
+	
+	
+	
 
 	/**
 	 * scroll to element by pointer , Max try limit is 1 minute for try to find element
