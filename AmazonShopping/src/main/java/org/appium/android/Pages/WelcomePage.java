@@ -52,9 +52,9 @@ public class WelcomePage extends BaseUtil {
 	 * Enter User name For Login
 	 * @param text
 	 */
-	public void enterUserName(String text)
+	public boolean enterUserName(String text)
 	{
-		enterText(userNameTextBox, text);
+		return enterText(userNameTextBox, text);
 	}
 	
 	/**
@@ -74,8 +74,8 @@ public class WelcomePage extends BaseUtil {
 	 * Enter password
 	 * @param password
 	 */
-	public void enterPassword(String password){
-		enterText(loginPasswordTextBox, password);
+	public boolean enterPassword(String password){
+		return enterText(loginPasswordTextBox, password);
 	}
 	
 	/**
