@@ -28,4 +28,13 @@
 			</class>
 		</classes>
 	</test>
+	<test name="SearchProducts">
+		<classes>
+			<class name="org.appium.android.Tests.SearchAndProductTest">
+				<methods>
+					<include name="prodcutSarchAddTocart" />
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>
