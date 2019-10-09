@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Wipro" parallel="tests" thread-count="1"
+	preserve-order="true">
+	<listeners>
+		<listener
+			class-name="org.appium.android.Reports.ExtentReporter" />
+	</listeners>
+
+	<test name="SignInPage">
+		<classes>
+			<class name="org.appium.android.Tests.SignInTest">
+				<methods>
+					<include name="verifySingInPageElement" />
+					<include name="veriySignInButtonFunc" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="WelcomePage">
+		<classes>
+			<class name="org.appium.android.Tests.WelcomeTest">
+				<methods>
+					<include name="inValidUserName" />
+					<include name="validUserName" />
+					<include name="loginInAmazonApp" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
