@@ -4,10 +4,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
 
+import org.apache.log4j.Logger;
 import org.appium.android.Commons.Helper;
+import org.appium.android.Tests.SearchAndProductTest;
 
 public class AppiumServer {
+	
+	private static final Logger logger = Logger.getLogger(AppiumServer.class);
 	/**
 	 * This method invoke Appium server methods and all command parameter get from
 	 * Application.properties file. StopAppium method stop appium server if run in
@@ -16,11 +21,13 @@ public class AppiumServer {
 	 * @throws Exception
 	 *
 	 */
+	
 	public void startAppiumServer() throws Exception {
 		RuntimeExec appiumObj = new RuntimeExec();
+		System.setProperty("current.date", new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date()));
 		appiumObj.stopAppium("killall -9 node");
 		// appiumObj.stopAppium("killall -9 $(lsof -t -i:4445)");
-		System.out.println(
+		logger.info("Appium Command "+
 				Helper.getProjectProperties("nodeJsLocation") + " " + Helper.getProjectProperties("appiumLocation")
 						+ " --address " + Helper.getProjectProperties("IpAddress") + " --port "
 						+ Helper.getProjectProperties("appiumPortNumber") + " --no-reset --command-timeout "
@@ -83,6 +90,7 @@ public class AppiumServer {
 		 *
 		 */
 		public void startAppium(String command) {
+			logger.info("Appium process to start");
 			Runtime rt = Runtime.getRuntime();
 			RuntimeExec rte = new RuntimeExec();
 			StreamWrapper error, output;
@@ -113,6 +121,7 @@ public class AppiumServer {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			logger.info("Appium Start");
 		}
 
 		/**
@@ -123,6 +132,7 @@ public class AppiumServer {
 		 * @param command "Linux Or windows Command"
 		 */
 		public void stopAppium(String command) {
+			logger.info("Appium Process to stop");
 			Runtime rt = Runtime.getRuntime();
 			RuntimeExec rte = new RuntimeExec();
 			StreamWrapper error, output;
@@ -148,6 +158,8 @@ public class AppiumServer {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			logger.info("Appium Stoped");
 		}
+		
 	}
 }

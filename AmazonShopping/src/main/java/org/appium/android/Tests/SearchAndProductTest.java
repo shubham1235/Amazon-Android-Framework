@@ -1,5 +1,8 @@
 package org.appium.android.Tests;
 
+import java.lang.reflect.Method;
+
+import org.apache.log4j.Logger;
 import org.appium.android.Commons.Helper;
 import org.appium.android.Commons.TestScriptHelper;
 import org.appium.android.Pages.SearchAndProductPage;
@@ -12,7 +15,8 @@ import org.testng.asserts.SoftAssert;
 public class SearchAndProductTest extends SearchAndProductPage {
 
 	SoftAssert softAssert;
-
+	private static final Logger logger = Logger.getLogger(SearchAndProductTest.class);
+	
 	public SearchAndProductTest() throws Exception {
 		super();
 		// TODO Auto-generated constructor stub
@@ -20,9 +24,7 @@ public class SearchAndProductTest extends SearchAndProductPage {
 
 	@BeforeClass
 	public void igniter() throws Exception {
-
-		TestScriptHelper.closeAndLogin(Helper.getProjectProperties("AppCredentials", "userName"),
-				Helper.getProjectProperties("AppCredentials", "password"));
+		TestScriptHelper.closeAndLogin(Helper.getProjectProperties("AppCredentials", "userName"),Helper.getProjectProperties("AppCredentials", "password"));
 	}
 
 	/**
@@ -35,9 +37,9 @@ public class SearchAndProductTest extends SearchAndProductPage {
 	 * @throws Exception
 	 */
 	@Test
-	public void prodcutSarchAddTocart() throws Exception {
+	public void prodcutSarchAddTocart(Method method) throws Exception {
 		softAssert = new SoftAssert();
-
+		logger.info("Start execution" + method.getName());
 		// Get product information price and product info which is used full for cart
 		// product comparison
 		String prodcutInfo = "", productPrice = "";

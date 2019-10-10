@@ -1,5 +1,7 @@
 package org.appium.android.Tests;
 
+import org.apache.log4j.Logger;
+import org.appium.android.Commons.Helper;
 import org.appium.android.Pages.SignInPage;
 import org.appium.android.Pages.WelcomePage;
 import org.testng.annotations.BeforeClass;
@@ -12,10 +14,9 @@ public class WelcomeTest extends WelcomePage {
 	}
 
 	SoftAssert softAssert;
-	String userName ="Shubverma5@gmail.com";
-	String password ="Shubham1.";
 	SignInPage singInPage = new SignInPage();
 	
+	private static final Logger logger = Logger.getLogger(WelcomeTest.class);
 	
 	@BeforeClass
 	public void baseClassTest()
@@ -33,6 +34,7 @@ public class WelcomeTest extends WelcomePage {
 	@Test(priority = 1)
 	public void inValidUserName(){
 		softAssert = new SoftAssert();
+		logger.info("Start execution inValidUserName");
 		String invalidError ="";
 		softAssert.assertTrue(clickOnRadioLoginButton(),"login radio button not selected some thing wrong with click event");
 		softAssert.assertTrue(enterUserName("invalidUserName"),"not able to enter text in User name text box");
@@ -48,10 +50,11 @@ public class WelcomeTest extends WelcomePage {
 	 * @throws Exception
 	 */
 	@Test(priority = 2)
-	public void validUserName(){
+	public void validUserName() throws Exception{
+		logger.info("Start execution validUserName");
 		softAssert = new SoftAssert();
 		softAssert.assertTrue(clickOnRadioLoginButton(),"login radio button not selected some thing wrong with click event");
-		softAssert.assertTrue(enterUserName(userName),"UserName Text box not accepting Input");
+		softAssert.assertTrue(enterUserName(Helper.getProjectProperties("AppCredentials", "userName")),"UserName Text box not accepting Input");
 		softAssert.assertTrue(clickOnContinueButton(),"continue button click functionality not working");
 		softAssert.assertTrue(isPasswordTextfieldDisplayed());
 		softAssert.assertAll();
@@ -63,9 +66,10 @@ public class WelcomeTest extends WelcomePage {
 	 */
 
 	@Test(priority = 3)
-	public void loginInAmazonApp(){
+	public void loginInAmazonApp() throws Exception{
+		logger.info("Start execution loginInAmazonApp");
 		softAssert = new SoftAssert();
-		softAssert.assertTrue(enterPassword(password),"Password Text box not accepting Inputs");
+		softAssert.assertTrue(enterPassword(Helper.getProjectProperties("AppCredentials", "password")),"Password Text box not accepting Inputs");
 		softAssert.assertTrue(clickOnLoginButton(),"login button not click able");
 		softAssert.assertTrue(selectEnglishforApp(),"PopUp not visible on screen");
 		softAssert.assertTrue(clickOnSaveChangeButton(),"save change button is disbale");
