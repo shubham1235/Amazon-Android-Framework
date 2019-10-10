@@ -1,0 +1,14 @@
+2019-10-10 21:54:37 INFO  AppiumServer:135 - Appium Process to stop
+2019-10-10 21:54:37 INFO  AppiumServer:161 - Appium Stoped
+2019-10-10 21:54:37 INFO  AppiumServer:30 - Appium Command /usr/local/bin/node /usr/local/bin/appium --address 0.0.0.0 --port 4723 --no-reset --command-timeout 90
+2019-10-10 21:54:37 INFO  AppiumServer:93 - Appium process to start
+2019-10-10 21:54:46 INFO  AppiumServer:124 - Appium Start
+2019-10-10 21:55:59 INFO  AppiumServer:135 - Appium Process to stop
+2019-10-10 21:55:59 INFO  AppiumServer:161 - Appium Stoped
+2019-10-10 21:55:59 INFO  AppiumServer:30 - Appium Command /usr/local/bin/node /usr/local/bin/appium --address 0.0.0.0 --port 4723 --no-reset --command-timeout 90
+2019-10-10 21:55:59 INFO  AppiumServer:93 - Appium process to start
+2019-10-10 21:56:06 INFO  AppiumServer:124 - Appium Start
+2019-10-10 21:57:55 INFO  SignInTest:28 - Start App Log Thread
+2019-10-10 21:57:55 INFO  SignInTest:48 - Start executionverifySingInPageElement
+2019-10-10 21:58:04 INFO  SignInTest:72 - Start executionveriySignInButtonFunc
+2019-10-10 21:58:35 INFO  SignInTest:34 - Stop App Log Thread
