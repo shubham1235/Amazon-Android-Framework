@@ -19,7 +19,7 @@ public class Helper {
 	public static String getProjectProperties(String propertiFileName,String elementName) throws Exception {
 		Properties properties = new Properties();
 		InputStream inputStream = new FileInputStream(
-				System.getProperty("user.dir") + "/DataResource/"+propertiFileName.trim()+".properties");
+				System.getProperty("user.dir") + "/DataResource/"+propertiFileName+".properties");
 		properties.load(inputStream);
 		return properties.getProperty(elementName).toString().trim();
 
